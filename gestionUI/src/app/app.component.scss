@@ -1,0 +1,55 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+$background-moredark: #3a3a3a;
+
+.ticketCard {
+    width : 400px;
+    margin : 20px;
+}
+
+.inputForm{
+    float : left;
+}
+.buttonExport{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    margin : 30px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .progress{
+    margin-bottom: 20px;
+  }
+
+  .custom-opacity{
+    opacity: 0;
+  }
+
+  .content{
+    padding : 15px;
+    margin-top: 10px;
+  }
+
+  .toolbar{
+    background-color : rgb(47, 47, 47);
+    box-shadow: 0 0 0.7em rgb(24, 24, 24);
+    color : white;
+  }
+
+  .logo{
+    margin-left: 20px;
+    margin-right : 30px;
+  }
+
+  .custom-color{
+    color : rgb(47, 47, 47);
+  }
+
+  .active {
+    background: $background-moredark;
+}

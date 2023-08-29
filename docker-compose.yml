@@ -1,0 +1,17 @@
+version: '3'
+services:
+  angular-app:
+    build:
+      context: ./gestionUI
+    image: angular-app
+    ports:
+      - '4200:80'
+    depends_on:
+      - spring-boot-app
+
+  spring-boot-app:
+    build:
+      context: ./gestion
+    image: spring-app
+    ports:
+      - '8080:8080'

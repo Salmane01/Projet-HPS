@@ -1,0 +1,13 @@
+.credential {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust this to control the centering within the viewport */
+  }
+  
+  .image {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+  }

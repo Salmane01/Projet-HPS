@@ -1,0 +1,17 @@
+com\hps\gestion\configuration\BeanConfiguration.class
+com\hps\gestion\service\RequestUtils.class
+com\hps\gestion\dto\Tag.class
+com\hps\gestion\BitbucketJiraApplication.class
+com\hps\gestion\service\TicketService.class
+com\hps\gestion\controller\CommitController.class
+com\hps\gestion\dto\Credentials.class
+com\hps\gestion\service\LoginService.class
+com\hps\gestion\controller\LoginController.class
+com\hps\gestion\dto\Commit.class
+com\hps\gestion\dto\Repository.class
+com\hps\gestion\service\CommitService.class
+com\hps\gestion\shared\GlobalVariables.class
+com\hps\gestion\controller\TicketController.class
+com\hps\gestion\controller\RepositoryController.class
+com\hps\gestion\dto\Ticket.class
+com\hps\gestion\service\RepositoryService.class

@@ -1,0 +1,53 @@
+<div (keyup.enter)="submit()" class="credential">
+    <div><img class="image" src="/assets/images/Logo_hps_0.png"></div>
+    
+    <div>
+        <mat-form-field>
+            <mat-label>Jira URL</mat-label>
+            <input matInput [(ngModel)]="credentials.jiraURL">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field>
+            <mat-label>Jira Username</mat-label>
+            <input matInput [(ngModel)]="credentials.jiraUsername">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Jira Password</mat-label>
+            <input type = "password" matInput [(ngModel)]="credentials.jiraPassword">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Bitbucket URL</mat-label>
+            <input matInput [(ngModel)]="credentials.bitbucketURL">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Bitbucket Username</mat-label>
+            <input matInput [(ngModel)]="credentials.bitbucketUsername">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Bitbucket Password</mat-label>
+            <input type="password" matInput [(ngModel)]="credentials.bitbucketPassword">
+        </mat-form-field>
+    </div>
+    <div class="centerbutton">
+        <button (click)="submit()" type="button" mat-raised-button color="primary">Submit</button>
+    </div>
+</div>
+
+
+<!--
+<input matInput [(ngModel)]="jiraUsername">
+<input type = "password" matInput [(ngModel)]="jiraPassword">
+<input matInput [(ngModel)]="bitbucketUsername">
+<input type = "password" matInput [(ngModel)]="bitbucketPassword">
+<button  (click)="submit()" type="button" mat-raised-button color="primary">Submit</button>
+-->

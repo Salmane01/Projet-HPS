@@ -1,0 +1,99 @@
+<div class = "content">
+
+    <mat-form-field>
+      <mat-label>Select a project</mat-label>
+      <mat-select (selectionChange)="onValueChangedProject($event)">
+        <mat-option *ngFor="let project of projects" [value]="project">{{project}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Select a repository</mat-label>
+      <mat-select (selectionChange)="onValueChangedRepository($event)">
+        <mat-option *ngFor="let repository of repositories"[value]="repository.name">{{repository.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Select a branch</mat-label>
+      <mat-select (selectionChange)="onValueChangedBranch($event)">
+        <mat-option *ngFor="let branch of branches" [value]="branch">{{branch}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>select tag 1</mat-label>
+      <mat-select (selectionChange)="onValueChangedTag1($event)">
+        <mat-option *ngFor="let tag of tags" [value] = "tag">{{tag}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>select tag 2</mat-label>
+      <mat-select (selectionChange)="onValueChangedTag2($event)">
+        <mat-option *ngFor="let tag of tags" [value] ="tag">{{tag}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <button (click)="getCommitsBetweenTags()" class="buttonInput" type="button" mat-raised-button color="primary">Submit</button>
+    
+    <mat-progress-bar id = "progress" mode="indeterminate"></mat-progress-bar>
+    
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+      <ng-container matColumnDef="Author">
+        <th mat-header-cell *matHeaderCellDef> Author </th>
+        <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="CommitDate">
+        <th mat-header-cell *matHeaderCellDef> Commit Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="CommitHash">
+        <th mat-header-cell *matHeaderCellDef> Commit Hash </th>
+        <td mat-cell *matCellDef="let element"> {{element.hash.substring(0,9)}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="CommitMessage">
+        <th mat-header-cell *matHeaderCellDef> Commit Message </th>
+        <td mat-cell *matCellDef="let element"> {{element.message}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="jiraID">
+        <th mat-header-cell *matHeaderCellDef> Jira ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.jiraID}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="issueID">
+        <th mat-header-cell *matHeaderCellDef> Issue ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.issueID}} </td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="summary">
+        <th mat-header-cell *matHeaderCellDef> Summary </th>
+        <td mat-cell *matCellDef="let element"> {{element.summary}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+      
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+  
+    <div class="buttonExport">
+      <mat-spinner *ngIf="btn" class="spinner"></mat-spinner>
+      <button *ngIf="dataOk" (click)="exportToExcel()" type="button" mat-raised-button color="primary">Export To Excel</button>
+    </div>
+  
+  </div>

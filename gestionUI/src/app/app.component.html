@@ -1,0 +1,9 @@
+<mat-toolbar class="toolbar" *ngIf="isAuthenticated()">
+  <span class="logo">
+    <span><img src="/assets/images/logo_.png" height=25 width=110></span>
+  </span>
+  <a mat-button routerLink="/commit" routerLinkActive="active">Commits</a>
+  <a mat-button routerLink="/ticket"routerLinkActive="active">Tickets</a>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
